@@ -1,19 +1,43 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import RouteMap from './router/routeMap'
+import localStore from './util/localStorage'
+import {CITYNAME} from './confjg/localStoreKey'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+import * as userInfoActionsFromOtherFile from './actions/userinfo'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {
+            initDone: false
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                {
+                    this.state.initDone
+                        ? <RouteMap/>
+                        : '正在加载...'
+                }
+            </div>
+        );
+    }
+
+    componentDidMount() {
+        //获取位置信息
+        let cityName = localStore.getItem(CITYNAME)
+        if (cityName == null) {
+            cityName = '成都'
+        }
+
+
+        this.setState({
+            initDone: true
+        })
+    }
 }
 
 export default App;
