@@ -3,8 +3,12 @@ import RouteMap from './router/routeMap'
 import localStore from './util/localStorage'
 import {CITYNAME} from './confjg/localStoreKey'
 import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import {connect, Provider} from 'react-redux'
 import * as userInfoActionsFromOtherFile from './actions/userinfo'
+import configureStore from './store/configureStore'
+
+const store=configureStore()
+
 
 class App extends Component {
     constructor() {
@@ -19,7 +23,10 @@ class App extends Component {
             <div>
                 {
                     this.state.initDone
-                        ? <RouteMap/>
+                        ?
+                        <Provider store={store}>
+                            <RouteMap/>
+                        </Provider>
                         : '正在加载...'
                 }
             </div>
@@ -33,6 +40,10 @@ class App extends Component {
             cityName = '成都'
         }
 
+        //将城市信息存储到Redux中
+        this.props.userInfoActions.update({
+            cityName:cityName
+        })
 
         this.setState({
             initDone: true
@@ -40,4 +51,19 @@ class App extends Component {
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        userInfoActions:bindActionCreators(userInfoActionsFromOtherFile,dispatch)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
