@@ -4,15 +4,15 @@ import localStore from './util/localStorage'
 import {CITYNAME} from './confjg/localStoreKey'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 import * as userInfoActionsFromOtherFile from './actions/userinfo'
-import configureStore from './store/configureStore'
 
-const store = configureStore()
 
 
 class App extends Component {
     constructor() {
         super();
+        this.shouldComponentUpdate=PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
             initDone: false
         }

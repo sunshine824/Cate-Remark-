@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
-import {
-    Link
-} from 'react-router-dom'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
+import HomeHeader from '../../components/HomeHeader'
 
 export default class Home extends Component {
+    constructor() {
+        super();
+        this.shouldComponentUpdate=PureRenderMixin.shouldComponentUpdate.bind(this)
+    }
     render() {
         return (
-            <Link to="/city">
-                Hello World
-            </Link>
+            <div>
+                <HomeHeader/>
+            </div>
         );
     };
 }
