@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import HomeHeader from '../../components/HomeHeader'
+import Categroy from '../../components/Category'
 import {connect} from 'react-redux'
 
 class Home extends Component {
@@ -13,12 +14,12 @@ class Home extends Component {
         return (
             <div>
                 <HomeHeader cityName={this.props.userinfo.cityName}/>
+                <Categroy/>
             </div>
         );
     };
 }
 function mapStateToProps(state) {
-    console.log(state)
     return {
         userinfo:state.userinfo
     }

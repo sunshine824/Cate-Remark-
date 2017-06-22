@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 import './style.less'
 
-export default class PCIndex extends Component {
+export default class HomeHeader extends Component {
     constructor(){
         super()
         this.shouldComponentUpdate=PureRenderMixin.shouldComponentUpdate.bind(this)
