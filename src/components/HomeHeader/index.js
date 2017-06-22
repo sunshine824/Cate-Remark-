@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-import './style.css'
+import './style.less'
 
 export default class PCIndex extends Component {
     constructor(){
@@ -10,17 +10,21 @@ export default class PCIndex extends Component {
     }
     render() {
         return (
-            <div className="clear-fix">
-                <div className="float-left">
-                    深圳
-                    <span className="icon-angle-down"></span>
+            <div id="home-header" className="clear-fix">
+                <div className="home-header-left float-left">
+                    <span>{this.props.cityName}</span>
+                    &nbsp;
+                    <i className="icon-angle-down"></i>
                 </div>
-                <div className="float-right">
-                    <span className="icon-user"></span>
+                <div className="home-header-right float-right">
+                    <i className="icon-user"></i>
                 </div>
-                <div>
-                    <span className="icon-search"></span>
-                    <input/>
+                <div className="home-header-middle">
+                    <div className="search-container">
+                        <i className="icon-search"></i>
+                        &nbsp;
+                       <input placeholder="请输入关键字" type="text"/>
+                    </div>
                 </div>
             </div>
         );
