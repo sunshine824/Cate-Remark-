@@ -8,10 +8,17 @@ export default class Header extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
     }
 
+    clickHandle(){
+        window.history.back()
+    }
+
     render() {
         return (
-            <div>
-                头部
+            <div id="common-header">
+                 <span className="back-icon" onClick={this.clickHandle.bind(this)}>
+                    <i className="icon-chevron-left"></i>
+                </span>
+                <h2>{this.props.title}</h2>
             </div>
         );
     };

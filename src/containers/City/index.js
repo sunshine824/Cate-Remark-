@@ -22,7 +22,7 @@ class City extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header title="选择城市"/>
             </div>
         );
     };
