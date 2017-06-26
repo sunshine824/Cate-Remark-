@@ -32,6 +32,7 @@ export default class LoadMore extends Component {
             if (this.props.isLoadingMore) {
                 return
             }
+            //节流(阻止重复执行)
             if (timeoutId) {
                 clearInterval(timeoutId)
             }
