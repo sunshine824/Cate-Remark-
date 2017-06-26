@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import HomeHeader from '../../components/HomeHeader'
 import Categroy from '../../components/Category'
 import {connect} from 'react-redux'
+import Ad from './subpage/ad'
 
 class Home extends Component {
     constructor() {
@@ -15,6 +16,8 @@ class Home extends Component {
             <div>
                 <HomeHeader cityName={this.props.userinfo.cityName}/>
                 <Categroy/>
+                <div style={{height:'15px'}}></div>
+                <Ad/>
             </div>
         );
     };

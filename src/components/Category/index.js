@@ -16,7 +16,8 @@ export default class Category extends Component {
 
     render() {
         const option = {
-            auto: 2000,
+            auto: 3000,
+            speed:1000,
             callback: (index) => {
                 this.setState({
                     index: index
