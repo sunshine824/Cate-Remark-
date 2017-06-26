@@ -12,15 +12,15 @@ export default class HomeAd extends Component {
     render() {
         const data = this.props.data
         return (
-            <div>
+            <div id="home-ad">
                 <h2>超级特惠</h2>
-                <div>
+                <div className="ad-container clear-fix">
                     {
                         data.map((item, index) => {
-                            return <div key={index}>
-                                <Link to={item.link}>
+                            return <div key={index} className="ad-item float-left">
+                                <a href={item.link}>
                                     <img src={item.img} alt="" style={{width:'100px'}} />
-                                </Link>
+                                </a>
                             </div>
                         })
                     }
