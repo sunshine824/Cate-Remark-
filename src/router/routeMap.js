@@ -10,6 +10,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import Home from '../containers/Home'
 import City from '../containers/City'
 import User from '../containers/User'
+import Search from '../containers/Search'
 
 const history = createBrowserHistory()
 
@@ -21,6 +22,7 @@ class RouteMap extends Component {
                     <Route exact path='/' component={Home}/>
                     <Route path="/city" component={City}/>
                     <Route path="/user" component={User}/>
+                    <Route path="/search/:category" component={Search}/>
                 </div>
             </Router>
         )

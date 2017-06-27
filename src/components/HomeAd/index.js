@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-import {Link} from 'react-router-dom'
 import './style.less'
 
 export default class HomeAd extends Component {
