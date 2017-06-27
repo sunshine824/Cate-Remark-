@@ -3,36 +3,18 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {
     Link
 } from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory'
+import SearchInput from '../SearchInput'
 import './style.less'
-
-const history = createBrowserHistory()
 
 
 export default class HomeHeader extends Component {
     constructor() {
         super()
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
-        this.state = {
-            kwd: ''
-        }
     }
 
-    ChangeHangle(e) {
-        const val = e.target.value
-        console.log(val)
-        this.setState({
-            kwd:val
-        })
-    }
-
-    KeyUpHandle(e){
-        if(e.keyCode!==13){
-            return
-        }
-        console.log(history)
-        history.push('/search/all/'+encodeURIComponent(this.state.kwd))
-        //window.location.href='/search/all/'+encodeURIComponent(this.state.kwd)
+    enterHandle(value){
+        window.location.href='/search/all/'+encodeURIComponent(value)
     }
 
     render() {
@@ -52,13 +34,7 @@ export default class HomeHeader extends Component {
                     <div className="search-container">
                         <i className="icon-search"></i>
                         &nbsp;
-                        <input
-                            placeholder="请输入关键字"
-                            type="text"
-                            value={this.state.kwd}
-                            onChange={this.ChangeHangle.bind(this)}
-                            onKeyUp={this.KeyUpHandle.bind(this)}
-                        />
+                        <SearchInput value="" enterHandle={this.enterHandle.bind(this)}/>
                     </div>
                 </div>
             </div>
