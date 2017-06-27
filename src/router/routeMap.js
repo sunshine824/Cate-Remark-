@@ -22,7 +22,7 @@ class RouteMap extends Component {
                     <Route exact path='/' component={Home}/>
                     <Route path="/city" component={City}/>
                     <Route path="/user" component={User}/>
-                    <Route path="/search/:category" component={Search}/>
+                    <Route path="/search/:category/:keyword" component={Search}/>
                 </div>
             </Router>
         )

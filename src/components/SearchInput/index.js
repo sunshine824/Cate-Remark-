@@ -24,7 +24,7 @@ export default class SearchInput extends Component {
     }
 
     KeyUpHandle(e){
-        if(e.keyCode!==13 || this.state.kwd==''){
+        if(e.keyCode!==13 || this.state.kwd===''){
             return
         }
         this.props.enterHandle(this.state.kwd)

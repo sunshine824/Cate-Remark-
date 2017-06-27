@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
+import SearchHeader from '../../components/SearchHeader'
+import SearchList from './subpage/List'
 
 export default class Search extends Component {
     constructor() {
@@ -7,16 +9,12 @@ export default class Search extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
     }
 
-    componentDidMount(){
-        const match=this.props.match
-        console.log(match)
-        //console.log(match.params.category)
-    }
-
     render() {
+        const match=this.props.match
         return (
             <div>
-                search
+                <SearchHeader keyword={match.params.keyword}/>
+                <SearchList keyword={match.params.keyword} category={match.params.category}/>
             </div>
         );
     };
