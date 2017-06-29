@@ -79,7 +79,7 @@ class Buy extends Component {
         const id = this.props.id
         const userinfo = this.props.userinfo
         if (!userinfo.username) {
-            history.push('/Login')
+            this.props.history.push('/User')
             return false;
         }
         return true
@@ -88,8 +88,10 @@ class Buy extends Component {
     render() {
         return (
             <div>
-                <BuyAndStore isStore={this.state.isStore} buyHandle={this.buyHandle.bind(this)}
-                             storeHandle={this.storeHandle.bind(this)}/>
+                <BuyAndStore
+                    isStore={this.state.isStore}
+                    buyHandle={this.buyHandle.bind(this)}
+                    storeHandle={this.storeHandle.bind(this)}/>
             </div>
         );
     };
