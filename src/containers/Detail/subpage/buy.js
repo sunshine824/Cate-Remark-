@@ -4,9 +4,6 @@ import {connect} from 'react-redux'
 import BuyAndStore from '../../../components/BuyAndStore'
 import {bindActionCreators} from 'redux'
 import * as storeActionsFromFile from '../../../actions/store'
-import createBrowserHistory from 'history/createBrowserHistory'
-
-const history = createBrowserHistory()
 
 class Buy extends Component {
     constructor() {
@@ -31,7 +28,7 @@ class Buy extends Component {
         //购买的流程
 
         //跳转到用户主页
-        history.push('/User')
+        this.props.history.push('/User')
 
     }
 
@@ -79,7 +76,7 @@ class Buy extends Component {
         const id = this.props.id
         const userinfo = this.props.userinfo
         if (!userinfo.username) {
-            this.props.history.push('/User')
+            this.props.history.push('/Login')
             return false;
         }
         return true
