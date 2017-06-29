@@ -19,6 +19,9 @@ export default class Login extends Component {
 
     clickHandle() {
         const username = this.state.username
+        if(username===''){
+            return
+        }
         this.props.loginHandle(username)
     }
 
