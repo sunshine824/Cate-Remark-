@@ -31,7 +31,7 @@ class Buy extends Component {
         //购买的流程
 
         //跳转到用户主页
-        this.props.history.push('/User')
+        history.push('/User')
 
     }
 
