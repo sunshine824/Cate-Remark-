@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import {getInfoData} from '../../../fetch/detail/detai'
+import DetailInfo from '../../../components/DetailInfo'
 
 export default class Info extends Component {
     constructor() {
         super();
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            info: false,
+            data: false,
         }
     }
 
@@ -17,7 +18,7 @@ export default class Info extends Component {
             return res.json()
         }).then(json => {
             this.setState({
-                info: json
+                data: json
             })
         }).catch(err => {
             console.log(err.message)
@@ -28,8 +29,8 @@ export default class Info extends Component {
         return (
             <div>
                 {
-                    this.state.info
-                        ? <div>有数据了</div>
+                    this.state.data
+                        ? <DetailInfo data={this.state.data}/>
                         : ''
                 }
             </div>
