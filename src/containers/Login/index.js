@@ -12,7 +12,7 @@ class Login extends Component {
         super();
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
         this.state = {
-            checking: true //判断是否登录
+            checking: false //判断是否登录
         }
     }
 
@@ -39,6 +39,11 @@ class Login extends Component {
         let userinfo = this.props.userinfo
         userinfo.username = username
         actions.update(userinfo)
+
+        this.setState({
+            checking:true
+        })
+        this.props.history.push('/User')
     }
 
     goUserPage() {
