@@ -8,10 +8,18 @@ export default class BuyAndStore extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
     }
 
+    storeClickHandle(){
+        this.props.storeHandle()
+    }
+
     render() {
         return (
             <div>
-                buy
+                {
+                    this.props.isStore
+                        ? <button onClick={this.storeClickHandle.bind(this)}>已收藏</button>
+                        : <button onClick={this.storeClickHandle.bind(this)}>收藏</button>
+                }
             </div>
         );
     };
