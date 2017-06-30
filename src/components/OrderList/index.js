@@ -12,11 +12,12 @@ export default class OrderList extends Component {
 
     render() {
         const data=this.props.data
+        const submitComment=this.props.submitComment
         return (
             <div>
                 {
                     data.map((item,index)=>{
-                        return <Item item={item} key={index}/>
+                        return <Item item={item} key={index} submitComment={submitComment}/>
                     })
                 }
             </div>
