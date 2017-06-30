@@ -8,8 +8,10 @@ export default class Header extends Component {
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this)
     }
 
-    clickHandle(){
-        window.history.back()
+    clickHandle() {
+        const backRouter = this.props.backRouter
+        //console.log(this.props.backRouter)
+        backRouter ? this.props.history.push(backRouter) : window.history.back()
     }
 
     render() {
