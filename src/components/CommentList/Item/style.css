@@ -1,0 +1,16 @@
+.comment-item {
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.comment-item h3 {
+  line-height: 1.5;
+  color: #666;
+  font-weight: normal;
+  font-size: 16px;
+}
+.comment-item p {
+  color: #999;
+  line-height: 1.5;
+  font-size: 14px;
+}
