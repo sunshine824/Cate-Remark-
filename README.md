@@ -20,11 +20,38 @@
 - [x]   搜索
 - [x]   收藏 评论
 - [x]   登录
-- [x]   排行榜
-- [x]   排行榜详情页
-- [x]   搜索
-- [x]   loading
-- [x]   播放详情页
-- [x]   滚动歌词
-- [x]   展示音乐进度
-- [x]   音乐进度的拖拽
+- [x]   城市切换
+- [x]   商品详情页
+
+### 存在的Bug：
+- [ ]   router4.0有时不能有效跳转
+
+## 使用 Build Setup
+克隆项目
+
+```
+> $ git clone https://github.com/sunshine824/Cate-remark.git
+```
+
+```
+> $ npm install
+```
+
+```
+> $ npm start
+```
+
+在mock层启动server服务
+
+
+在react目录下启动webpack服务
+
+```
+> $ npm run dev
+```
+
+发布项目文件命令
+
+```
+> $ npm run build
+```
