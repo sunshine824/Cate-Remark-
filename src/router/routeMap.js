@@ -26,6 +26,7 @@ class RouteMap extends Component {
                     <Route path="/user" component={User}/>
                     <Route path="/search/:category/:keyword" component={Search}/>
                     <Route path="/detail/:id" component={Detail}/>
+                    <Route path="/Login" component={Login}/>
                 </div>
             </Router>
         )
