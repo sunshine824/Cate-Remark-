@@ -10,7 +10,6 @@ export default class Header extends Component {
 
     clickHandle() {
         const backRouter = this.props.backRouter
-        //console.log(this.props.backRouter)
         backRouter ? this.props.history.push(backRouter) : window.history.back()
     }
 

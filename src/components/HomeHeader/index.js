@@ -4,10 +4,8 @@ import {
     Link
 } from 'react-router-dom'
 import SearchInput from '../SearchInput'
-import createBrowserHistory from 'history/createBrowserHistory'
 import './style.less'
 
-const history = createBrowserHistory()
 
 export default class HomeHeader extends Component {
     constructor() {
@@ -17,7 +15,7 @@ export default class HomeHeader extends Component {
 
     enterHandle(value){
         //window.location.href='/search/all/'+encodeURIComponent(value)
-        history.push('/search/all/'+encodeURIComponent(value))
+        this.props.history.push('/search/all/'+encodeURIComponent(value))
     }
 
     render() {
