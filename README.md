@@ -4,7 +4,7 @@
   作者：陈鑫
   
 ## 源代码
-源代码地址：[GitHub](https://github.com/921227965/vue-musicApp)  
+源代码地址：[GitHub](https://github.com/sunshine824/Cate-remark)  
 欢迎大家star和follow
 
 ### 部分效果图
